@@ -15,7 +15,8 @@ def scan_csv(in_csv, out_csv, field_count):
 
 def main():
   if len(sys.argv) != 4:
-    print 'Usage: ' + sys.argv[0] + ' <input_csv> <output_csv> <keep_fields_count>'
+    print 'Usage: ' + sys.argv[0] + ' <input_csv> <output_csv> <n>'
+    print '    Output a csv file containing exactly n fields'
     exit()
   scan_csv(sys.argv[1], sys.argv[2], int(sys.argv[3]))
 
