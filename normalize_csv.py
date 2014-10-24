@@ -9,7 +9,7 @@ def scan_csv(in_csv, out_csv, field_count):
     if len(line) < field_count:
       print "Strange record:", line
       continue
-    writer.writerow(line[:6])
+    writer.writerow(line[:field_count])
   in_csv.close()
   out_csv.close()
 
