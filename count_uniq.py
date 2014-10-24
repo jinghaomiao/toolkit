@@ -19,7 +19,7 @@ def scan(input_file):
 def main():
   if len(sys.argv) != 2:
     print 'Usage: ' + sys.argv[0] + ' <input_file>'
-    print '    It\'s like `cat $input_file | sort | uniq`, but appending count number on each line'
+    print '    It works like `sort $input_file | uniq`, but pre-appends occurrence count on each line, and outputs in decrease order'
     exit()
   scan(sys.argv[1])
 
