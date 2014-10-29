@@ -7,8 +7,10 @@ import matplotlib.pyplot as plt
 ################################ HELP
 def help():
   print 'Usage:', sys.argv[0], '[input_file]'
-  print '    Generate CDF graph for series of numbers.'
-  print '    input_file    File that contains lines of numbers. Each line will become a curve. STDIN will be used if not specified.'
+  print '''\
+    Generate CDF graph for series of numbers.
+    <input_file>    File that contains lines of numbers. Each line will become
+                    a curve. STDIN will be used if not specified.'''
   exit()
 
 if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
