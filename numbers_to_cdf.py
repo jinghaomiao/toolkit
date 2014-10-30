@@ -17,19 +17,18 @@ if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
   help()
 
 ################################ PROCESS
-line_no = 1
+series_no = 1
 for line in fileinput.input():
   numbers = [float(num) for num in line.split()]
   numbers.sort()
   numbers.insert(0, 0)
   count = [float(i)/len(numbers) for i in range(len(numbers))]
-  line_label = 'Series %d, size = %d' % (line_no, len(numbers))
-  line_no += 1
-  plt.plot(numbers, count, label = line_label)
+  series_label = 'Series %d, size = %d' % (series_no, len(numbers))
+  series_no += 1
+  plt.plot(numbers, count, label = series_label)
 
 plt.xlabel('Value')
 plt.ylabel('Percentage')
 plt.grid(True)
 plt.legend()
 plt.show()
-
