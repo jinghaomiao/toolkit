@@ -25,7 +25,7 @@ for line in fileinput.input():
   count = [float(i)/len(numbers) for i in range(len(numbers))]
   series_label = 'Series %d, size = %d' % (series_no, len(numbers))
   series_no += 1
-  plt.plot(numbers, count, label = series_label)
+  plt.plot(numbers, count, label = series_label, loc = 'lower right')
 
 plt.xlabel('Value')
 plt.ylabel('Percentage')
