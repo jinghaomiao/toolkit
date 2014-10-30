@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 def help():
   print 'Usage:', sys.argv[0], '[input_file]'
   print '''\
-    Generate CDF graph for series of numbers.
+    Draw CDF graph for series of numbers.
     <input_file>    File that contains lines of numbers. Each line will become
                     a curve. STDIN will be used if not specified.'''
   exit()
@@ -23,7 +23,7 @@ for line in fileinput.input():
   numbers.sort()
   numbers.insert(0, 0)
   count = [float(i)/len(numbers) for i in range(len(numbers))]
-  line_label = 'Line %d, size = %d' % (line_no, len(numbers))
+  line_label = 'Series %d, size = %d' % (line_no, len(numbers))
   line_no += 1
   plt.plot(numbers, count, label = line_label)
 
@@ -32,3 +32,4 @@ plt.ylabel('Percentage')
 plt.grid(True)
 plt.legend()
 plt.show()
+
