@@ -22,13 +22,13 @@ for line in fileinput.input():
   numbers = [float(num) for num in line.split()]
   numbers.sort()
   numbers.insert(0, 0)
-  count = [float(i)/len(numbers) for i in range(len(numbers))]
+  count = [float(i)/(len(numbers) - 1) for i in range(len(numbers))]
   series_label = 'Series %d, size = %d' % (series_no, len(numbers))
   series_no += 1
-  plt.plot(numbers, count, label = series_label, loc = 'lower right')
+  plt.plot(numbers, count, label = series_label)
 
 plt.xlabel('Value')
 plt.ylabel('Percentage')
 plt.grid(True)
-plt.legend()
+plt.legend(loc = 'lower right')
 plt.show()
