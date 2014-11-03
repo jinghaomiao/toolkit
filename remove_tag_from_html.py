@@ -1,6 +1,9 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import sys
 from HTMLParser import HTMLParser
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 ################################ HELP
 def help():
