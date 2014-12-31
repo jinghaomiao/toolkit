@@ -6,9 +6,10 @@ def help():
   print 'Usage: %s <output_prefix> [-l number_of_lines]|[-n number_of_files]'
   print '''\
     Split the STDIN to sub-files.
-    <output_prefix>         Prefix of output sub-files.
-    <-l number_of_lines>    Split by maximum lines.
-    <-n number_of_files>    Split by maximum sub-files.'''
+    <output_prefix>          Prefix of output sub-files.
+    <-l number_of_lines>     Split by lines count.
+    <-n number_of_files>     Split by maximum sub-files.
+    <-m max_lines> Split by maximum lines per file.'''
   exit()
 
 if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
@@ -44,5 +45,12 @@ elif (sys.argv[2] == '-n'):
   lines = [line for line in sys.stdin]
   number_of_lines = (len(lines) + number_of_files - 1) / number_of_files
   output_prefix += '_%s' % sys.argv[3]
+elif (sys.argv[2] == '-m'):
+  max_lines_per_file = int(sys.argv[3])
+  lines = [line for line in sys.stdin]
+  lines_count = len(lines)
+  number_of_files = (lines_count + max_lines_per_file - 1) / max_lines_per_file
+  number_of_lines = (lines_count + number_of_files - 1) / number_of_files
+  output_prefix += '_%d' % number_of_files
 
 produce_files(lines, output_prefix, number_of_lines)
