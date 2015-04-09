@@ -45,7 +45,7 @@ elif (sys.argv[1] == '-m'):
 number_of_files_width = int(math.log10(number_of_files))+1
 output_format = '%s_%%0%dd_of_%d' % (output_prefix, number_of_files_width, number_of_files)
 if len(sys.argv) == 5:
-  output += '.' + sys.argv[4]
+  output_format += '.' + sys.argv[4]
 
 produce_files(lines, output_format, number_of_lines)
 
