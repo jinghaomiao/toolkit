@@ -32,6 +32,9 @@ for line in fileinput.input():
   plt.plot(x, y, 'o', label = series_label)
   series_no += 1
 
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
 plt.grid(True)
 plt.legend()
+
 plt.show()

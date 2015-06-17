@@ -9,12 +9,9 @@ def help():
   print 'Usage:', sys.argv[0], '[input_file]'
   print '''\
     Draw dot plot for series of 2D coordinates like:
-    x00 x01 x02 ...
-    y00 y01 y02 ...
-    x10 x11 x12 ...
-    y10 y11 y12 ...
-    (x00, y00), (x01, y01), ... will be in the same color, while (x10, y10),
-    ... in another.
+    x00 y00 x01 y01 ...
+    x10 y10 x11 y11 ...
+    Dots in the same line will be in the same color.
 
     <input_file>    File that contains lines of numbers. STDIN will be used if
                     not specified.'''
@@ -25,15 +22,14 @@ if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
 
 ################################ PROCESS
 series_no = 0
-x = None
-y = None
 for line in fileinput.input():
-  if series_no % 2 == 0:
-    x = [float(num) for num in line.split()]
-  else:
-    y = [float(num) for num in line.split()]
-    series_label = 'Series %d, size = %d' % ((series_no / 2) + 1, len(x))
-    plt.plot(x, y, 'o', label = series_label)
+  dots = line.split()
+  dots_num = len(dots) / 2
+  x = [dots[2 * i] for i in range(dots_num)]
+  y = [dots[2 * i + 1] for i in range(dots_num)]
+
+  series_label = 'Series %d, size = %d' % (series_no, dots_num)
+  plt.plot(x, y, label = series_label)
   series_no += 1
 
 plt.xlabel('X Label')
