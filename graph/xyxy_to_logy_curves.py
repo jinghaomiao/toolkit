@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import fileinput
 import sys
 import matplotlib.pyplot as plt
 
@@ -23,12 +22,12 @@ if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
 ################################ PROCESS
 BaseY = float(sys.argv[1])
 series_no = 1
-for line in fileinput.input():
+for line in sys.stdin:
   numbers = [float(num) for num in line.split()]
   count = len(numbers)
   x = [numbers[i] for i in range(0, count, 2)]
   y = [numbers[i] for i in range(1, count, 2)]
-  series_label = 'Series %d, size = %d' % (series_no, count)
+  series_label = 'Series %d, from(%.2f, %.2f) to (%.2f, %.2f)' % (series_no, x[0], y[0], x[-1], y[-1])
   series_no += 1
   plt.semilogy(x, y, label = series_label, basey = BaseY)
 

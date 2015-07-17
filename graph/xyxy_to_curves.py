@@ -27,7 +27,7 @@ for line in fileinput.input():
   count = len(numbers)
   x = [numbers[i] for i in range(0, count, 2)]
   y = [numbers[i] for i in range(1, count, 2)]
-  series_label = 'Series %d, size = %d' % (series_no, count)
+  series_label = 'Series %d, from(%.2f, %.2f) to (%.2f, %.2f)' % (series_no, x[0], y[0], x[-1], y[-1])
   series_no += 1
   plt.plot(x, y, label = series_label)
 
