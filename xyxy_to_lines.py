@@ -29,7 +29,7 @@ for line in fileinput.input():
   y = [dots[2 * i + 1] for i in range(dots_num)]
 
   series_label = 'Series %d, size = %d' % (series_no, dots_num)
-  plt.plot(x, y, 'o', label = series_label)
+  plt.plot(x, y, label = series_label)
   series_no += 1
 
 plt.xlabel('X Label')
