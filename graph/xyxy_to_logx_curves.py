@@ -21,6 +21,7 @@ if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
   help()
 
 ################################ PROCESS
+Base = int(sys.argv[1])
 series_no = 1
 for line in fileinput.input():
   numbers = [float(num) for num in line.split()]
@@ -29,7 +30,7 @@ for line in fileinput.input():
   y = [numbers[i] for i in range(1, count, 2)]
   series_label = 'Series %d, size = %d' % (series_no, count)
   series_no += 1
-  plt.plot(x, y, label = series_label)
+  plt.semilogx(x, y, label = series_label, basex = Base)
 
 plt.xlabel('X Label')
 plt.ylabel('Y Label')
