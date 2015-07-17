@@ -8,9 +8,13 @@ import matplotlib.pyplot as plt
 def help():
   print 'Usage:', sys.argv[0], '[input_file]'
   print '''\
-    Draw curve graph for series of numbers in "x y x y ..." format.
-    <input_file>    File that contains lines of numbers. Each line will become
-                    a curve. STDIN will be used if not specified.'''
+    Draw dot plot for series of 2D coordinates like:
+    x00 y00 x01 y01 ...
+    x10 y10 x11 y11 ...
+    Dots in the same line will be in the same color.
+
+    <input_file>    File that contains lines of numbers. STDIN will be used if
+                    not specified.'''
   exit()
 
 if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
@@ -20,14 +24,15 @@ if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
 series_no = 1
 for line in fileinput.input():
   numbers = [float(num) for num in line.split()]
-  x = [numbers[i] for i in range(0, len(numbers), 2)]
-  y = [numbers[i] for i in range(1, len(numbers), 2)]
-  series_label = 'Series %d, size = %d' % (series_no, len(numbers))
+  count = len(numbers)
+  x = [numbers[i] for i in range(0, count, 2)]
+  y = [numbers[i] for i in range(1, count, 2)]
+  series_label = 'Series %d, size = %d' % (series_no, count)
   series_no += 1
   plt.plot(x, y, label = series_label)
 
-plt.xlabel('Value')
-plt.ylabel('Percentage')
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
 plt.grid(True)
 plt.legend(loc = 'lower right')
 plt.show()
