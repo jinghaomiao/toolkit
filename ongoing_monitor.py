@@ -12,9 +12,9 @@ def diff(f1, f2):
   status, output = commands.getstatusoutput('diff {} {}'.format(f1, f2))
   for line in output.split('\n'):
     if line[0] == '<':
-      print '+', line[2:-1]
+      print '+', line[2:]
     elif line[0] == '>':
-      print '-', line[2:-1]
+      print '-', line[2:]
 
 def new_diff(log_files):
   if len(log_files) == 0:
