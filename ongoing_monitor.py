@@ -2,10 +2,23 @@
 
 import sys
 import os
+import commands
 
 def scan_dir(BACK_UP_DIR):
   abs_files = [os.path.join(BACK_UP_DIR, f) for f in os.listdir(BACK_UP_DIR)]
   return sorted([f for f in abs_files if os.path.isfile(f)])
+
+def diff(f1, f2):
+  status, output = commands.getstatusoutput('diff {} {}'.format(f1, f2))
+  if status:
+    print 'Something went wrong.'
+    return
+
+  for line in output.split('\n'):
+    if line[0] == '<':
+      print '+', line[2:-1]
+    elif line[0] == '>':
+      print '-', line[2:-1]
 
 def new_diff(log_files):
   if len(log_files) == 0:
@@ -13,7 +26,7 @@ def new_diff(log_files):
   elif len(log_files) == 1:
     print file(log_files).read()
   else:
-    os.system('diff {} {}'.format(log_files[-1], log_files[-2]))
+    diff(log_files[-1], log_files[-2])
 
 def all_diff(log_files):
   if len(log_files) == 0:
@@ -21,7 +34,7 @@ def all_diff(log_files):
   elif len(log_files) == 1:
     print file(log_files).read()
   else:
-    os.system('diff {} {}'.format(log_files[-1], log_files[0]))
+    diff(log_files[-1], log_files[0])
 
 def archive(log_files):
   cur = None
