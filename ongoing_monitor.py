@@ -10,10 +10,6 @@ def scan_dir(BACK_UP_DIR):
 
 def diff(f1, f2):
   status, output = commands.getstatusoutput('diff {} {}'.format(f1, f2))
-  if status:
-    print 'Something went wrong.'
-    return
-
   for line in output.split('\n'):
     if line[0] == '<':
       print '+', line[2:-1]
