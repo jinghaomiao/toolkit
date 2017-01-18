@@ -13,7 +13,9 @@ alias p='ps aux | grep -i'
 
 # git
 alias gs='git status'
-alias gm='git commit -m'
 alias ga='git commit --amend --no-edit && git push origin HEAD:refs/for/master'
 alias gp='git push origin HEAD:refs/for/master'
 
+# Special
+export WS=
+alias w="cd $WS"
