@@ -7,6 +7,5 @@ alias l='ls -CF'
 alias p='ps aux | grep -i'
 
 # history
-alias h='history 1000 | grep -i'
+alias h='history 10000 | grep -i'
 
-alias gp='git push origin HEAD:refs/for/master'
