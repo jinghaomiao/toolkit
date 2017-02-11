@@ -1,0 +1,3 @@
+# python -m virtualenv ./py2.7-std
+# source ./py2.7-std/bin/activate
+# pip install -r <requirements.txt>

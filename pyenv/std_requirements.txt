@@ -1,0 +1,11 @@
+# Tools
+bpython
+
+# Google infra
+glog
+grpc
+grpcio-tools # protobuf and grpcio included
+
+# Dev
+flask
+pymongo >= 3.4
