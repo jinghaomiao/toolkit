@@ -12,10 +12,10 @@ alias l='ls -CF'
 alias p='ps aux | grep -i'
 
 # python
-alias py2='source $WS/toolkit/pyenv/py2.7-std/bin/activate'
-alias py3='source $WS/toolkit/pyenv/py3.6-std/bin/activate'
-alias py='python'
-alias bpy='bpython'
+alias p2='source $WS/toolkit/pyenv/py2.7-std/bin/activate && which python'
+alias p3='source $WS/toolkit/pyenv/py3.6-std/bin/activate && which python'
+alias py='which python && python'
+alias bp='which bpython && bpython'
 
 # git
 alias gs='git status'
