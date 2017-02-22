@@ -1,11 +1,11 @@
 ########## Tools
 bpython
+pip >= 9
 
 ########## System
 setproctitle  # Then gunicorn can set proc name
 
 ########## Google infra
-gflag
 glog
 grpcio-tools  # protobuf and grpcio included, grpc is also included for py3.6
 

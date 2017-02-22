@@ -1,3 +1,7 @@
+# Special
+export WS=
+alias w="cd $WS"
+
 # History
 HISTSIZE=100000
 HISTFILESIZE=200000
@@ -21,7 +25,3 @@ alias bp='which bpython && bpython'
 alias gs='git status'
 alias ga='git commit --amend --no-edit && git push origin HEAD:refs/for/master'
 alias gp='git push origin HEAD:refs/for/master'
-
-# Special
-export WS=
-alias w="cd $WS"
