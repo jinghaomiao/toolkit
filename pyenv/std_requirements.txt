@@ -1,11 +1,18 @@
-# Tools
+########## Tools
 bpython
 
-# Google infra
-glog
-grpc
-grpcio-tools # protobuf and grpcio included
+########## System
+setproctitle  # Then gunicorn can set proc name
 
-# Dev
-flask
+########## Google infra
+gflag
+glog
+grpcio-tools  # protobuf and grpcio included, grpc is also included for py3.6
+
+########## DB
 pymongo >= 3.4
+
+########## Web
+flask
+gevent
+gunicorn
