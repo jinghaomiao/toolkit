@@ -1,5 +1,5 @@
 # Special
-export WS=
+export WS=/home/data/workspace
 alias w="cd $WS"
 
 # History

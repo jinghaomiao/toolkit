@@ -14,6 +14,5 @@ python -m virtualenv $ENV_DIR
 source $ENV_DIR/bin/activate
 pip install -r std_requirements.txt
 pip install -r py2.7_std_requirements.txt
-pip install -r py2.7-ubuntu_requirements.txt
 
 popd
