@@ -31,3 +31,4 @@ alias ga='git commit --amend --no-edit && git push origin HEAD:refs/for/master'
 alias gp='git push origin HEAD:refs/for/master'
 
 # Special
+source $WS/toolkit/bashrc_local.sh
