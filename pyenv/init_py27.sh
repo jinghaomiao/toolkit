@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ENV_DIR=py2.7-std
+ENV_DIR=py27
 
 pushd $(dirname $0)
 
@@ -13,6 +13,6 @@ python -m virtualenv $ENV_DIR
 # Build
 source $ENV_DIR/bin/activate
 pip install -r std_requirements.txt
-pip install -r py2.7_std_requirements.txt
+pip install -r py27_requirements.txt
 
 popd
