@@ -1,6 +1,3 @@
-# Read local config and private scripts.
-source $WS/toolkit/bashrc_config.sh
-
 # Workspace
 alias w="cd $WS"
 alias d="cd $DT"
