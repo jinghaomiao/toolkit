@@ -1,8 +1,10 @@
+# Read local config and private scripts.
+source $WS/toolkit/bashrc_config.sh
+
 # Workspace
-export WS=/home/data/workspace
 alias w="cd $WS"
-alias d='cd /home/data'
-alias dl='cd /home/data/download'
+alias d="cd $DT"
+alias dl="cd $DL"
 
 # History
 HISTSIZE=100000
@@ -30,5 +32,4 @@ alias gs='git status'
 alias ga='git commit --amend --no-edit && git push origin HEAD:refs/for/master'
 alias gp='git push origin HEAD:refs/for/master'
 
-# Special
-source $WS/toolkit/bashrc_local.sh
+
