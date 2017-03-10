@@ -1,10 +1,10 @@
 #!/bin/bash
+# Install original python and its venv module.
+# On Ubuntu: sudo apt-get install python3.6 python3.6-venv python3.6-dev
 
 ENV_DIR=py36
 
 pushd $(dirname $0)
-
-echo "Current runtime version: $(python --version 2>&1)"
 
 # Clean
 rm -fr $ENV_DIR
