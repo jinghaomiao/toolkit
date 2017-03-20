@@ -1,18 +1,20 @@
 #!/bin/bash
-# Install original python and its venv module.
-# On Ubuntu: sudo apt-get install python3.6 python3.6-venv python3.6-dev
 
+VER=3.6
 ENV_DIR=py36
+
+# Install original python and its venv module.
+# On Ubuntu:
+#   sudo apt-get install python${VER} python${VER}-venv python${VER}-dev
 
 pushd $(dirname $0)
 
 # Clean
-rm -fr $ENV_DIR
-python3.6 -m venv $ENV_DIR
+rm -fr $ENV_DIR || exit 1
+python${VER} -m venv $ENV_DIR || exit 1
 
 # Build
-source $ENV_DIR/bin/activate
-pip install -r std_requirements.txt
-pip install -r py36_requirements.txt
+source $ENV_DIR/bin/activate || exit 1
+pip${VER} install -r std_requirements.txt || exit 1
 
 popd
