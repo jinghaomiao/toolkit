@@ -1,2 +1,4 @@
+.idea
 pyenv/py??
+docker/cassandra/data
 docker/codiad/Codiad*
