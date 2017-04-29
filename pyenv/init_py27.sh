@@ -7,7 +7,7 @@ ENV_DIR=py27
 # On Ubuntu:
 #   sudo apt-get install python${VER} python-virtualenv python${VER}-dev
 
-pushd $(dirname $0)
+cd $(dirname $0)
 
 # Clean
 rm -fr $ENV_DIR || exit 1
@@ -17,5 +17,3 @@ python${VER} -m virtualenv $ENV_DIR || exit 1
 source $ENV_DIR/bin/activate || exit 1
 pip${VER} install -r std_requirements.txt || exit 1
 pip${VER} install -r ${ENV_DIR}_requirements.txt || exit 1
-
-popd

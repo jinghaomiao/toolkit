@@ -1,11 +1,10 @@
 #!/bin/bash
 
-pushd $(dirname $0)
-
 ADDRESS=172.19.32.28
 SEEDS=172.19.57.37
 DATA_DIR=data
 
+cd $(dirname $0)
 mkdir ${DATA_DIR}
 docker run -d --name cassandra \
     -e CASSANDRA_BROADCAST_ADDRESS=${ADDRESS} \
@@ -16,5 +15,3 @@ docker run -d --name cassandra \
 
 echo "Current existing instances:"
 docker ps -a
-
-popd
