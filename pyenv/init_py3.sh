@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VER=3.6
-ENV_DIR=py36
+VER=3.4
+ENV_DIR=py${VER}
 
 # Install original python and its venv module.
 # On Ubuntu:

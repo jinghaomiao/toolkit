@@ -1,10 +1,12 @@
 ########## Tools
-bpython
+bpython >= 0.16
 pip >= 9
 
 ########## Google infra
 glog
-grpcio-tools  # protobuf and grpcio included, grpc is also included for py3.6
+grpc
+grpcio-tools
+protobuf >= 3.3
 
 ########## DB
 pymongo >= 3.4
@@ -13,4 +15,7 @@ pymongo >= 3.4
 flask
 gevent
 gunicorn
-setproctitle  # Then gunicorn can set proc name
+
+########## System
+setproctitle
+termcolor

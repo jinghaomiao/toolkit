@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VER=2.7
-ENV_DIR=py27
+ENV_DIR=py{VER}
 
 # Install original python and its venv module.
 # On Ubuntu:
@@ -16,4 +16,3 @@ python${VER} -m virtualenv $ENV_DIR || exit 1
 # Build
 source $ENV_DIR/bin/activate || exit 1
 pip${VER} install -r std_requirements.txt || exit 1
-pip${VER} install -r ${ENV_DIR}_requirements.txt || exit 1
