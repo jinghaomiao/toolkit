@@ -1,4 +1,4 @@
 #!/bin/bash
 
 CONTAINER=cassandra
-docker exec -i -t cassandra nodetool status
+docker exec -i -t ${CONTAINER} nodetool status
