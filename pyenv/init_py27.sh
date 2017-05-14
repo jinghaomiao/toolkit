@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VER=2.7
-ENV_DIR=py{VER}
+ENV_DIR=py${VER}
 
 # Install original python and its venv module.
 # On Ubuntu:

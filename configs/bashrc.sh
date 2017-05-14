@@ -18,8 +18,8 @@ alias p='ps aux | grep -i'
 alias du1='du -h --exclude="lost+found" -d 1 .'
 
 # python
-alias p2='source $WS/toolkit/pyenv/py27/bin/activate && which python'
-alias p3='source $WS/toolkit/pyenv/py36/bin/activate && which python'
+alias p2='source $WS/toolkit/pyenv/py2.7/bin/activate && which python'
+alias p3='source $WS/toolkit/pyenv/py3.6/bin/activate && which python'
 alias py='which python && python'
 alias bp='which bpython && bpython'
 alias wp='which python'
