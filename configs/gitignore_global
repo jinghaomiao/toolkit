@@ -1,6 +1,6 @@
-*.pyc
 *.log
 *.o
+*.pyc
 .idea
-aaron_*
+.project
 nohup.out

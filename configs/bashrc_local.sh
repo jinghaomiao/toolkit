@@ -5,6 +5,6 @@ DT=
 # download dir.
 DL=
 
-source "$WS/toolkit/bashrc.sh"
+source "$WS/toolkit/configs/bashrc.sh"
 
 # Other special/private scripts.
