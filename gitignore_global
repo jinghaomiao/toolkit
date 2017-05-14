@@ -1,0 +1,6 @@
+*.pyc
+*.log
+*.o
+.idea
+aaron_*
+nohup.out
