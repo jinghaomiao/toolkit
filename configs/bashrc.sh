@@ -25,8 +25,10 @@ alias bp='which bpython && bpython'
 alias wp='which python'
 
 # git
-alias ga='git pull && git commit --amend --no-edit && git push origin HEAD:refs/for/master'
-alias gp='git pull && git push origin HEAD:refs/for/master'
+alias gf='git fetch'
+alias ga='git commit --amend --no-edit'
+alias gr='git rebase origin/master'
+alias gp='git push origin HEAD:refs/for/master'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 
 alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoremove --purge'
