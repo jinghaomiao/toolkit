@@ -1,7 +1,17 @@
+pyenv/py?.?
+
+# Log files.
 *.log
-*.o
-*.pyc
+nohup.out
+
+# IDE files.
 .idea
 .project
-nohup.out
-pyenv/py?.?
+
+# Building files.
+*.o
+*.pyc
+bazel-bin
+bazel-out
+bazel-genfiles
+cmake-build-debug
