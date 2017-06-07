@@ -27,7 +27,7 @@ alias wp='which python'
 # git
 alias gf='git fetch'
 alias ga='git commit --amend --no-edit'
-alias gr='git rebase origin/master'
+alias gr='git fetch && git rebase origin/master'
 alias gp='git push origin HEAD:refs/for/master'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 
