@@ -4,8 +4,8 @@ alias d="cd $DT"
 alias dl="cd $DL"
 
 # History
-HISTSIZE=100000
-HISTFILESIZE=200000
+export HISTSIZE=100000
+export HISTFILESIZE=200000
 alias h='history 1000 | grep -i'
 
 # ls
@@ -30,5 +30,13 @@ alias ga='git commit --amend --no-edit'
 alias gr='git fetch && git rebase origin/master'
 alias gp='git push origin HEAD:refs/for/master'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
+alias git_reset_fork='git remote update && git reset --hard upstream/master -- && git push origin +master'
 
+# Bazel build
+alias bb='bazel build'
+alias bbd='bazel build -c dbg'
+alias bbo='bazel build -c opt'
+alias br='bazel run'
+
+# Ubuntu
 alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoremove --purge'

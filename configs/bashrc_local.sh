@@ -1,9 +1,9 @@
 # workspace dir.
-WS=
+WS=/home/data/workspace
 # data dir.
-DT=
+DT=/home/data
 # download dir.
-DL=
+DL=/home/data/download
 
 source "$WS/toolkit/configs/bashrc.sh"
 
