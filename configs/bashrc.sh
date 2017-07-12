@@ -30,7 +30,8 @@ alias ga='git commit --amend --no-edit'
 alias gr='git fetch && git rebase origin/master'
 alias gp='git push origin HEAD:refs/for/master'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias git_reset_fork='git remote update && git reset --hard upstream/master -- && git push origin +master'
+alias reset_fork='git remote update && git reset --hard upstream/master -- && git push origin +master'
+alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
 
 # Bazel build
 alias bb='bazel build'
