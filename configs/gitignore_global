@@ -1,4 +1,5 @@
 pyenv/py?.?
+.DS_Store
 
 # Log files.
 *.log

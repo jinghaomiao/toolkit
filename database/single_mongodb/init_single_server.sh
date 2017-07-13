@@ -24,4 +24,4 @@ sleep ${HOLD_ON_SECONDS}
 echo "Init users and reboot server..."
 mongo localhost:${PORT} < mongo2.4_init_auth.js
 sleep 5
-mongod --bind_ip ${HOST} ${CONFIG}
+mongod --bind_ip ${HOST} --fork ${CONFIG}
