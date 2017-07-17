@@ -1,10 +1,11 @@
 ########## Tools
 bpython >= 0.16
 pip >= 9
+pylint
 
 ########## Google infra
 glog
-grpc
+grpcio
 grpcio-tools
 protobuf >= 3.3
 

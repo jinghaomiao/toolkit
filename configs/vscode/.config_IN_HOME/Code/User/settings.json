@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        "**/.*": true,
+        "**/CVS": true,
+        "**/bazel-*": true,
+        "**/*.pyc": true
+    },
+    "editor.rulers": [
+        80
+    ],
+    "workbench.colorTheme": "Default Light+",
+    "explorer.openEditors.visible": 0,
+    "window.zoomLevel": 1
+}
