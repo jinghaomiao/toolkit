@@ -15,7 +15,7 @@ alias l='ls -CF'
 
 # ps/du
 alias p='ps aux | grep -i'
-alias du1='du -h --exclude="lost+found" -d 1 .'
+alias du1='du -h -d 1 .'
 
 # python
 alias p2='source $WS/toolkit/pyenv/py2.7/bin/activate && which python'
@@ -28,6 +28,7 @@ alias wp='which python'
 alias gam='git commit --amend --no-edit'
 alias gbr='git branch -a'
 alias gci='git commit -m'
+alias gco='git checkout'
 alias glg='git log --graph --all --decorate --oneline'
 alias gpr='git pull --rebase'
 alias gps='git push'
