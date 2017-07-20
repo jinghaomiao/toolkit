@@ -1,5 +1,6 @@
 ########## Tools
 bpython >= 0.16
+pep8
 pip >= 9
 pylint
 

@@ -27,11 +27,13 @@ alias wp='which python'
 # git
 alias gf='git fetch'
 alias ga='git commit --amend --no-edit'
-alias gr='git fetch && git rebase origin/master'
+alias gg='nohup gitg > /dev/null 2>&1 &'
+alias gu='git remote update'
+alias gst='git status --short'
+alias gr='git pull --rebase'
 alias gp='git push origin HEAD:refs/for/master'
-alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias reset_fork='git remote update && git reset --hard upstream/master -- && git push origin +master'
 alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
+alias echo_rebase_fork='echo "git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop"'
 
 # Bazel build
 alias bb='bazel build'
