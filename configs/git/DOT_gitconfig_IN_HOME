@@ -12,9 +12,9 @@
 [difftool "meld"]
 	cmd = meld $LOCAL $REMOTE
 [alias]
-	ci = commit -m
+	ci = commit
 	co = checkout
-	st = status --short
+	st = status
 	unstage = reset HEAD --
 [gitreview]
 	username = Aaron Xiao

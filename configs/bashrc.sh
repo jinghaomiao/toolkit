@@ -19,22 +19,24 @@ alias du1='du -h --exclude="lost+found" -d 1 .'
 
 # python
 alias p2='source $WS/toolkit/pyenv/py2.7/bin/activate && which python'
-alias p3='source $WS/toolkit/pyenv/py3.6/bin/activate && which python'
+alias p3='source $WS/toolkit/pyenv/py3.5/bin/activate && which python'
 alias py='which python && python'
 alias bp='which bpython && bpython'
 alias wp='which python'
 
 # git
-alias gf='git fetch'
-alias ga='git commit --amend --no-edit'
-alias gg='nohup gitg > /dev/null 2>&1 &'
-alias gu='git remote update'
-alias gl='git log --graph --all --decorate --oneline'
-alias gr='git pull --rebase'
-alias gp='git push origin HEAD:refs/for/master'
+alias gam='git commit --amend --no-edit'
+alias gbr='git branch -a'
+alias gci='git commit -m'
+alias glg='git log --graph --all --decorate --oneline'
+alias gpr='git pull --rebase'
+alias gps='git push'
+alias gpo='git push origin HEAD:refs/for/master'
+alias gru='git remote update'
+alias gst='git status --short'
+alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
 alias rebase_fork_15='git stash && git remote update && git reset --hard jinghaomiao/apollo_1.5 -- && git push origin +apollo_1.5 && git stash pop'
-alias echo_rebase_fork='echo "git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop"'
 
 # Bazel build
 alias bb='bazel build'
