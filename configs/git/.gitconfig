@@ -1,0 +1,27 @@
+[user]
+	name = Aaron Xiao
+	email = xiaoxiangquan@gmail.com
+[color]
+	ui = auto
+[merge]
+	tool = meld
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[diff]
+	tool = meld
+[difftool "meld"]
+	cmd = meld $LOCAL $REMOTE
+[alias]
+	ci = commit -m
+	co = checkout
+	st = status --short
+	unstage = reset HEAD --
+[gitreview]
+	username = Aaron Xiao
+[core]
+	editor = vim
+	excludesfile = /home/data/workspace/toolkit/configs/git/gitignore_global
+[pull]
+	rebase = true
+[push]
+	default = simple

@@ -29,11 +29,11 @@ alias gf='git fetch'
 alias ga='git commit --amend --no-edit'
 alias gg='nohup gitg > /dev/null 2>&1 &'
 alias gu='git remote update'
-alias gst='git status --short'
-alias gl='git log --graph'
+alias gl='git log --graph --all --oneline'
 alias gr='git pull --rebase'
 alias gp='git push origin HEAD:refs/for/master'
 alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
+alias rebase_fork_15='git stash && git remote update && git reset --hard jinghaomiao/apollo_1.5 -- && git push origin +apollo_1.5 && git stash pop'
 alias echo_rebase_fork='echo "git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop"'
 
 # Bazel build
