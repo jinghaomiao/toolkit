@@ -11,7 +11,6 @@
     "workbench.colorTheme": "Default Light+",
     "explorer.openEditors.visible": 0,
     "window.zoomLevel": 1,
-    "python.venvPath": "/home/data/workspace/toolkit/pyenv/py2.7",
-    "python.linting.pep8Enabled": true,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "C_Cpp.intelliSenseEngine": "Default"
 }

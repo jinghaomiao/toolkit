@@ -1,18 +1,20 @@
+# For VS Code 1.4
 {
     "configurations": [
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceRoot}",
                 "/usr/include",
-                "/usr/local/include"
+                "/usr/local/include",
+                "${workspaceRoot}"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -21,15 +23,15 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceRoot}",
-                "${workspaceRoot}/apollo",
-                "${workspaceRoot}/apollo/bazel-genfiles",
                 "/usr/include/c++/5",
                 "/usr/include/x86_64-linux-gnu/c++/5",
-                "/usr/lib/gcc/x86_64-linux-gnu/5/include",
                 "/usr/local/include",
                 "/usr/include",
-                "/usr/include/x86_64-linux-gnu"
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                "${workspaceRoot}/apollo",
+                "${workspaceRoot}/apollo/bazel-genfiles",
+                "${workspaceRoot}"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -39,7 +41,11 @@
                     "/usr/include/x86_64-linux-gnu/c++/5",
                     "/usr/local/include",
                     "/usr/include",
-                    "/usr/include/x86_64-linux-gnu"
+                    "/usr/include/x86_64-linux-gnu",
+                    "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                    "${workspaceRoot}/apollo",
+                    "${workspaceRoot}/apollo/bazel-genfiles",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -48,8 +54,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceRoot}",
-                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include"
+                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+                "${workspaceRoot}"
             ],
             "defines": [
                 "_DEBUG",
@@ -58,11 +64,13 @@
             "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
-                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*"
+                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             }
         }
-    ]
+    ],
+    "version": 2
 }
