@@ -25,6 +25,7 @@ alias bp='which bpython && bpython'
 alias wp='which python'
 
 # git
+alias gad='git add'
 alias gam='git commit --amend --no-edit'
 alias gbr='git branch -a'
 alias gci='git commit -m'
