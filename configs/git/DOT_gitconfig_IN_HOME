@@ -12,6 +12,7 @@
 [difftool "meld"]
 	cmd = meld $LOCAL $REMOTE
 [alias]
+	br = branch
 	ci = commit
 	co = checkout
 	st = status
