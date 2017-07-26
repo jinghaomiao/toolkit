@@ -34,7 +34,7 @@ alias gru='git remote update'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
-alias rebase_fork_15='git stash && git remote update && git reset --hard jinghaomiao/apollo_1.5 -- && git push origin +apollo_1.5 && git stash pop'
+alias rebase_dev='git stash && git remote update && git reset --hard upstream_dev/master -- && git push apollo_dev +master && git stash pop'
 
 # Bazel build
 alias bb='bazel build'
