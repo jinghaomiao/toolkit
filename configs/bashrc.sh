@@ -26,8 +26,10 @@ alias wp='which python'
 
 # git
 alias gam='git commit --amend --no-edit'
+alias gbr='git branch -av'
 alias gci='git commit -m'
 alias glg='git log --graph --all --decorate --oneline'
+alias gp='git push'
 alias gpr='git pull --rebase'
 alias gpo='git push origin HEAD:refs/for/master'
 alias gru='git remote update'
