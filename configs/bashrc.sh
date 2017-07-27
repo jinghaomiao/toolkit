@@ -30,13 +30,13 @@ alias gbr='git branch -av'
 alias gci='git commit -m'
 alias glg='git log --graph --all --decorate --oneline'
 alias gp='git push'
-alias gpr='git pull --rebase'
+alias gpr='git stash && git pull --rebase && git stash pop'
 alias gpo='git push origin HEAD:refs/for/master'
 alias gru='git remote update'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias rebase_fork='git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
-alias rebase_dev='git stash && git remote update && git reset --hard upstream_dev/master -- && git push apollo_dev +master && git stash pop'
+alias rbFork='git checkout master && git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
+alias rbDev='git checkout dev && git stash && git remote update && git reset --hard upstream_dev/master -- && git push apollo_dev +dev && git stash pop'
 
 # Bazel build
 alias bb='bazel build'
@@ -46,4 +46,6 @@ alias br='bazel run'
 
 # Ubuntu
 alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoremove --purge'
+alias aptInstall='sudo apt-get install'
+alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
