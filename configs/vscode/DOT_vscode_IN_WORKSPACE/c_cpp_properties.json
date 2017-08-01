@@ -29,8 +29,8 @@
                 "/usr/include",
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/lib/gcc/x86_64-linux-gnu/5/include",
-                "${workspaceRoot}/apollo",
-                "${workspaceRoot}/apollo/bazel-genfiles",
+                "${workspaceRoot}/bazel-apollo/external/com_github_google_protobuf/src",
+                "${workspaceRoot}/bazel-genfiles",
                 "${workspaceRoot}"
             ],
             "defines": [],
@@ -43,8 +43,8 @@
                     "/usr/include",
                     "/usr/include/x86_64-linux-gnu",
                     "/usr/lib/gcc/x86_64-linux-gnu/5/include",
-                    "${workspaceRoot}/apollo",
-                    "${workspaceRoot}/apollo/bazel-genfiles",
+                    "${workspaceRoot}/bazel-apollo/external/com_github_google_protobuf/src",
+                    "${workspaceRoot}/bazel-genfiles",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
