@@ -11,4 +11,7 @@ RUN apt-get -y install \
   vim \
   wget
 
-ENTRYPOINT ["/bin/bash"]
+ADD install /home/install
+
+WORKDIR /home/data
+ENTRYPOINT ["/home/install/entrypoint.sh"]
