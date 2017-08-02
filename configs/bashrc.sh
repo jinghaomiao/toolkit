@@ -49,3 +49,18 @@ alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgra
 alias aptInstall='sudo apt-get install'
 alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
+
+# other
+function findCode {
+  DIR=$1
+  find "${DIR}" -regex ".*\.\(h\|hpp\|c\|cc\|cpp\|py\|go\|md\)$"
+}
+function countCode {
+  DIR=$1
+  findCode "${DIR}" | xargs wc
+}
+function grepCode {
+  DIR=$1
+  PATTERN=$2
+  findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
+}
