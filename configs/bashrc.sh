@@ -35,8 +35,27 @@ alias gpo='git push origin HEAD:refs/for/master'
 alias gru='git remote update'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias rbFork='git checkout master && git stash && git remote update && git reset --hard upstream/master -- && git push origin +master && git stash pop'
-alias rbDev='git checkout dev && git stash && git remote update && git reset --hard upstream_dev/master -- && git push apollo_dev +dev && git stash pop'
+function ThreeWayRebase {
+  # E.g.: upstream/master
+  UPSTREAM=$1
+  # E.g.: origin
+  ORIGIN_REPO=$2
+  # E.g.: master
+  ORIGIN_BRANCH=$3
+  # E.g.: master
+  LOCAL_BRANCH=$4
+
+  git checkout ${LOCAL_BRANCH} || exit 1
+  STASH_RESULT=$(git stash)
+  git remote update || exit 1
+  git reset --hard upstream_dev/master -- || exit 1
+  if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
+    git stash pop
+  fi
+}
+
+alias rbFork='ThreeWayRebase upstream_dev/master apollo_dev master master'
+alias rbDev='ThreeWayRebase upstream_dev/master apollo_dev dev dev'
 
 # Bazel build
 alias bb='bazel build'
