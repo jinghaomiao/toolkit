@@ -72,7 +72,7 @@ alias aptSearch='apt-cache search'
 # other
 function findCode {
   DIR=$1
-  find "${DIR}" -regex ".*\.\(h\|hpp\|c\|cc\|cpp\|py\|go\|md\)$"
+  find "${DIR}" -regex ".*\.\(h\|hpp\|c\|cc\|cpp\|py\|go\|md\)"
 }
 function countCode {
   DIR=$1
@@ -82,4 +82,10 @@ function grepCode {
   DIR=$1
   PATTERN=$2
   findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
+}
+function grepExt {
+  DIR=$1
+  EXT=$2
+  PATTERN=$3
+  find "${DIR}" -regex ".*\.${EXT}" | xargs grep -n --color "${PATTERN}"
 }
