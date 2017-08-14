@@ -1,10 +1,10 @@
-# workspace dir.
-WS=/home/data/workspace
-# data dir.
-DT=/home/data
-# download dir.
-DL=/home/data/download
+# Local configs.
+DATA=~/data
+
+WS=${DATA}/workspace
+DL=${DATA}/download
+BIN=${DATA}/bin
 
 source "$WS/toolkit/configs/bashrc.sh"
 
-# Other special/private scripts.
+# Other special/private configs.
