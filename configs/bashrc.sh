@@ -33,6 +33,8 @@ alias gp='git push'
 alias gpr='git stash && git pull --rebase && git stash pop'
 alias gpo='git push origin HEAD:refs/for/master'
 alias gru='git remote update'
+alias gsl='git stash list'
+alias gss='git stash save'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 function ThreeWayRebase {
