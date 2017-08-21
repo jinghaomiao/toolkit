@@ -37,6 +37,7 @@ alias gsl='git stash list'
 alias gss='git stash save'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
+
 function ThreeWayRebase {
   # E.g.: upstream/master
   UPSTREAM=$1
@@ -55,9 +56,11 @@ function ThreeWayRebase {
     git stash pop
   fi
 }
-
 alias rbFork='ThreeWayRebase upstream_dev/master apollo_dev master master'
 alias rbDev='ThreeWayRebase upstream_dev/master apollo_dev dev dev'
+
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
 
 # Bazel build
 alias bb='bazel build'
@@ -91,3 +94,4 @@ function grepExt {
   PATTERN=$3
   find "${DIR}" -regex ".*\.${EXT}" | xargs grep -n --color "${PATTERN}"
 }
+
