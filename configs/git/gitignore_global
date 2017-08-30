@@ -8,6 +8,7 @@ nohup.out
 # IDE files.
 .idea
 .project
+.pydevproject
 .vscode
 
 # Building files.

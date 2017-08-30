@@ -48,9 +48,9 @@ function ThreeWayRebase {
   # E.g.: master
   LOCAL_BRANCH=$4
 
-  git checkout ${LOCAL_BRANCH} || exit 1
   STASH_RESULT=$(git stash)
   git remote update || exit 1
+  git checkout ${LOCAL_BRANCH} || exit 1
   git reset --hard upstream_dev/master -- || exit 1
   if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
     git stash pop
@@ -83,12 +83,12 @@ function countCode {
   DIR=$1
   findCode "${DIR}" | xargs wc
 }
-function grepCode {
+function gCode {
   DIR=$1
   PATTERN=$2
   findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
 }
-function grepExt {
+function gExt {
   DIR=$1
   EXT=$2
   PATTERN=$3
