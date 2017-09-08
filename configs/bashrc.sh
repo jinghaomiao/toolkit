@@ -48,7 +48,8 @@ function ThreeWayRebase {
   # E.g.: master
   LOCAL_BRANCH=$4
 
-  STASH_RESULT=$(git stash)
+  DATE=$(date '+%Y%m%d_%H%M%S')
+  STASH_RESULT=$(git stash save "ThreeWayRebase_${DATE}")
   git remote update || exit 1
   git checkout ${LOCAL_BRANCH} || exit 1
   git reset --hard upstream_dev/master -- || exit 1
