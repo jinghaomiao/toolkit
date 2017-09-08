@@ -17,14 +17,14 @@ alias l='ls -CF'
 alias p='ps aux | grep -i'
 alias du1='du -h -d 1 .'
 
-# python
+# Python
 alias p2='source $WS/toolkit/pyenv/py2.7/bin/activate && which python'
 alias p3='source $WS/toolkit/pyenv/py3.5/bin/activate && which python'
 alias py='which python && python'
 alias bp='which bpython && bpython'
 alias wp='which python'
 
-# git
+# Git
 alias gam='git commit --amend --no-edit'
 alias gbr='git branch -av'
 alias gci='git commit -m'
@@ -57,8 +57,6 @@ function ThreeWayRebase {
     git stash pop
   fi
 }
-alias rbFork='ThreeWayRebase upstream_dev/master apollo_dev master master'
-alias rbDev='ThreeWayRebase upstream_dev/master apollo_dev dev dev'
 
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
@@ -75,7 +73,7 @@ alias aptInstall='sudo apt-get install'
 alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
 
-# other
+# Search
 function findCode {
   DIR=$1
   find "${DIR}" -regex ".*\.\(h\|hpp\|c\|cc\|cpp\|py\|go\|md\)"
@@ -96,3 +94,9 @@ function gExt {
   find "${DIR}" -regex ".*\.${EXT}" | xargs grep -n --color "${PATTERN}"
 }
 
+# Apollo
+alias ap="cd $WS/apollo"
+alias rbFork='ThreeWayRebase upstream_dev/master apollo_dev master master'
+alias rbDev='ThreeWayRebase upstream_dev/master apollo_dev dev dev'
+alias devStart="$WS/apollo/docker/scripts/dev_start.sh"
+alias devInto="$WS/apollo/docker/scripts/dev_into.sh"
