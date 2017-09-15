@@ -12,6 +12,7 @@ alias h='history 1000 | grep -i'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias cp='rsync -aht --progress'
 
 # ps/du
 alias p='ps aux | grep -i'
