@@ -9,6 +9,7 @@ glog
 grpcio
 grpcio-tools
 protobuf >= 3.3
+tensorflow-gpu
 
 ########## DB
 # pymongo >= 3.4
@@ -21,3 +22,6 @@ gunicorn
 ########## System
 setproctitle
 termcolor
+
+########## Deep learning
+keras
