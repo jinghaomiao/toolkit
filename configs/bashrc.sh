@@ -39,21 +39,19 @@ alias gss='git stash save'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 
-function ThreeWayRebase {
-  # E.g.: upstream/master
+function SyncToUpstream {
+  # E.g.: upstream
   UPSTREAM=$1
-  # E.g.: origin
-  ORIGIN_REPO=$2
   # E.g.: master
-  ORIGIN_BRANCH=$3
+  UPSTREAM_BRANCH=$2
   # E.g.: master
-  LOCAL_BRANCH=$4
+  LOCAL_BRANCH=$3
 
   DATE=$(date '+%Y%m%d_%H%M%S')
-  STASH_RESULT=$(git stash save "ThreeWayRebase_${DATE}")
-  git remote update || exit 1
+  STASH_RESULT=$(git stash save "SyncToUpstream_${DATE}")
+  git fetch ${UPSTREAM} || exit 1
   git checkout ${LOCAL_BRANCH} || exit 1
-  git reset --hard upstream_dev/master -- || exit 1
+  git reset --hard ${UPSTREAM}/${UPSTREAM_BRANCH} -- || exit 1
   if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
     git stash pop
   fi
@@ -97,7 +95,8 @@ function gExt {
 
 # Apollo
 alias ap="cd $WS/apollo"
-alias rbFork='ThreeWayRebase upstream_dev/master apollo_dev master master'
-alias rbDev='ThreeWayRebase upstream_dev/master apollo_dev dev dev'
-alias devStart="$WS/apollo/docker/scripts/dev_start.sh"
-alias devInto="$WS/apollo/docker/scripts/dev_into.sh"
+alias apDev="cd $WS/apollo_dev"
+alias syMaster='SyncToUpstream upstream master master'
+alias syDev='SyncToUpstream upstream master dev'
+alias devStart="docker/scripts/dev_start.sh"
+alias devInto="docker/scripts/dev_into.sh"
