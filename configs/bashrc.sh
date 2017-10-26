@@ -38,6 +38,7 @@ alias gsl='git stash list'
 alias gss='git stash save'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
+alias gitSync='SyncToUpstream upstream master'
 
 function SyncToUpstream {
   # E.g.: upstream
@@ -95,8 +96,6 @@ function gExt {
 
 # Apollo
 alias ap="cd $WS/apollo"
-alias apDev="cd $WS/apollo_dev"
-alias syMaster='SyncToUpstream upstream master master'
-alias syDev='SyncToUpstream upstream master dev'
+alias syMaster='gitSync master'
 alias devStart="docker/scripts/dev_start.sh"
 alias devInto="docker/scripts/dev_into.sh"

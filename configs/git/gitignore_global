@@ -6,9 +6,11 @@ pyenv/py?.?
 nohup.out
 
 # IDE files.
+.cproject
 .idea
 .project
 .pydevproject
+.settings
 .vscode
 
 # Building files.
