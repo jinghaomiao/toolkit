@@ -33,6 +33,7 @@ alias glg='git log --graph --all --decorate --date=short --pretty=format:"%h %ad
 alias gp='git push'
 alias gpr='git stash && git pull --rebase && git stash pop'
 alias gpo='git push origin HEAD:refs/for/master'
+alias gpm='git push origin +master'
 alias gru='git remote update'
 alias gsl='git stash list'
 alias gss='git stash save'
