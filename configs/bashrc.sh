@@ -74,25 +74,40 @@ alias aptInstall='sudo apt-get install'
 alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
 
-# Search
-function findCode {
-  DIR=$1
-  find "${DIR}" -regex ".*\.\(h\|hpp\|c\|cc\|cpp\|py\|go\|md\)"
+# Find & Grep
+function findExt {
+  echo "Usage: findExt <EXT> <DIR>=." >&2
+  EXT=$1
+  DIR=$2
+  if [ -z ${DIR} ]; then
+    DIR="."
+  fi
+  find "${DIR}" -regex ".*${EXT}"
 }
-function countCode {
-  DIR=$1
-  findCode "${DIR}" | xargs wc
-}
-function gCode {
-  DIR=$1
+function grepExt {
+  echo "Usage: grepExt <EXT> <PATTERN> <DIR>=." >&2
+  EXT=$1
   PATTERN=$2
-  findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
+  DIR=$3
+  findExt "${EXT}" "${DIR}" | xargs grep -n --color "${PATTERN}"
 }
-function gExt {
+function findCodeC {
+  echo "Usage: findCodeC <DIR>=." >&2
   DIR=$1
-  EXT=$2
-  PATTERN=$3
-  find "${DIR}" -regex ".*\.${EXT}" | xargs grep -n --color "${PATTERN}"
+  findExt "\.\(h\|hpp\|c\|cc\|cpp\)" "${DIR}"
+}
+function findCode {
+  echo "Usage: findCode <DIR>=." >&2
+  DIR=$1
+  findCodeC "${DIR}"
+  findExt "\.\(py\|go\|java\|md\)" "${DIR}"
+  findExt "\(BUILD\)" "${DIR}"
+}
+function grepCode {
+  echo "Usage: grepCode <PATTERN> <DIR>=." >&2
+  PATTERN=$1
+  DIR=$2
+  findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
 }
 
 # Apollo
