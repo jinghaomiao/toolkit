@@ -62,11 +62,22 @@ function SyncToUpstream {
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 
-# Bazel build
+# Bazel
 alias bb='bazel build'
 alias bbd='bazel build -c dbg'
 alias bbo='bazel build -c opt'
 alias br='bazel run'
+function bazelDepsGraph {
+  echo "Usage: bazelDeps <TARGET> [FILTER_PATH]"
+  TARGET=$1
+  FILTER_PATH=$2
+  if [ ! -z ${FILTER_PATH} ]; then
+    bazel query "deps(${TARGET}) intersect ${FILTER_PATH}" --keep_going --output graph 2>/dev/null | dot -Tpng > /tmp/bazel_deps.png
+  else
+    bazel query "deps(${TARGET})" --keep_going --output graph 2>/dev/null | dot -Tpng > /tmp/bazel_deps.png
+  fi
+  echo "Exported to file:///tmp/bazel_deps.png"
+}
 
 # Ubuntu
 alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoremove --purge'
