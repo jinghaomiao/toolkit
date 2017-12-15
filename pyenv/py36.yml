@@ -1,0 +1,39 @@
+name: py36
+dependencies:
+  - python=3.6
+
+  # Language tools
+  - pep8
+  - pylint
+
+  # Google infra
+  - glog
+  - protobuf
+  - tensorflow-gpu
+
+  # Data science
+  - keras-gpu
+  - matplotlib
+  - numpy
+  - pandas
+
+  # Web
+  - flask
+  - gevent
+  - gunicorn
+
+  # Database
+  - pymongo
+
+  # System
+  - termcolor
+
+  - pip:
+    - bpython
+
+    # Google infra
+    - grpcio
+    - grpcio-tools
+
+    # System
+    - setproctitle

@@ -19,8 +19,8 @@ alias p='ps aux | grep -i'
 alias du1='du -h -d 1 .'
 
 # Python
-alias p2='source $WS/toolkit/pyenv/py2.7/bin/activate && which python'
-alias p3='source $WS/toolkit/pyenv/py3.5/bin/activate && which python'
+alias p2='source activate py27 && which python'
+alias p3='source activate py36 && which python'
 alias py='which python && python'
 alias bp='which bpython && bpython'
 alias wp='which python'
