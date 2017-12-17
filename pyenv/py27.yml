@@ -12,6 +12,7 @@ dependencies:
   - tensorflow-gpu
 
   # Data science
+  - h5py
   - keras-gpu
   - matplotlib
   - numpy
