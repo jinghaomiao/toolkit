@@ -16,6 +16,8 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
+  - scikit-learn = 0.18
+  - scipy
 
   # Web
   - flask
