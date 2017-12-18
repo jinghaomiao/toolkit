@@ -16,6 +16,7 @@ dependencies:
   - keras-gpu
   - matplotlib
   - numpy
+  - opencv
   - pandas
   - scikit-learn = 0.18
   - scipy
