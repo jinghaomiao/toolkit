@@ -54,7 +54,8 @@ def none_vs_dir(left, right, rel_path):
 def diff_dir(left, right, rel_path):
     left_files, left_dirs = list_dir(left, rel_path)
     right_files, right_dirs = list_dir(right, rel_path)
-    for rel_path, left_size in left_files.items():
+    for rel_path in sorted(left_files.keys()):
+        left_size = left_files[rel_path]
         if rel_path not in right_files:
             if rel_path in right_dirs:
                 file_vs_dir(left, right, rel_path, left_size)
@@ -69,21 +70,22 @@ def diff_dir(left, right, rel_path):
                 file_vs_larger(left, right, rel_path, left_size, right_size)
             else:
                 file_vs_smaller(left, right, rel_path, left_size, right_size)
-    for rel_path, right_size in right_files.items():
+    for rel_path in sorted(right_files.keys()):
+        right_size = right_files[rel_path]
         if rel_path in left_files:
             continue
         if rel_path in left_dirs:
             dir_vs_file(left, right, rel_path, right_size)
         else:
             none_vs_file(left, right, rel_path, right_size)
-    for rel_path in left_dirs:
+    for rel_path in sorted(left_dirs):
         if rel_path in right_files:
             continue
         if rel_path in right_dirs:
             diff_dir(left, right, rel_path)
         else:
             dir_vs_none(left, right, rel_path)
-    for rel_path in right_dirs:
+    for rel_path in sorted(right_dirs):
         if rel_path in left_files:
             continue
         if rel_path in left_dirs:
