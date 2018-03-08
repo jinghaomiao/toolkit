@@ -111,7 +111,7 @@ function findCode {
   echo "Usage: findCode <DIR>=." >&2
   DIR=$1
   findCodeC "${DIR}"
-  findExt "\.\(py\|go\|java\|sh\|bash\|md\)" "${DIR}"
+  findExt "\.\(py\|go\|java\|sh\|bash\|md\|proto\)" "${DIR}"
   findExt "\(BUILD\)" "${DIR}"
 }
 function grepCode {
