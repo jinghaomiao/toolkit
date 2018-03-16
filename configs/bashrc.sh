@@ -40,6 +40,8 @@ alias gss='git stash save'
 alias gst='git status --short'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias gitSync='SyncToUpstream upstream master'
+alias gitSaveStashPatch='git stash save MyGitStashPatch'
+alias gitApplyStashPatch='ApplyStash MyGitStashPatch'
 
 function SyncToUpstream {
   # E.g.: upstream
@@ -56,6 +58,16 @@ function SyncToUpstream {
   git reset --hard ${UPSTREAM}/${UPSTREAM_BRANCH} -- || exit 1
   if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
     git stash pop
+  fi
+}
+
+function ApplyStash {
+  STASH_KEYWORD=$1
+  STASH_NAME=$(git stash list | grep "${STASH_KEYWORD}" | awk -F: '{print $1}')
+  if ! [ -z ${STASH_NAME} ]; then
+    git stash apply ${STASH_NAME}
+  else
+    echo "No such stash patch named ${STASH_KEYWORD}"
   fi
 }
 
@@ -80,7 +92,7 @@ function bazelDepsGraph {
 }
 
 # Ubuntu
-alias uu='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoremove --purge'
+alias uu='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoremove -y --purge'
 alias aptInstall='sudo apt-get install'
 alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
