@@ -1,7 +1,13 @@
 # Workspace
 alias w="cd $WS"
+
+# Path
 alias d="cd $DT"
 alias dl="cd $DL"
+export PATH="${PATH}:${BIN}"
+
+# Static tools.
+alias ssQt5="nohup ${SEA}/bin/Shadowsocks-Qt5-3.0.0-x86_64.AppImage > /dev/null 2>&1 &"
 
 # History
 export HISTSIZE=100000

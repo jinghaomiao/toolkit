@@ -9,6 +9,7 @@ dependencies:
   # Google infra
   - glog
   - protobuf
+  - python-gflags
   - tensorflow-gpu
 
   # Data science
