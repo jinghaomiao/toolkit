@@ -37,7 +37,13 @@ alias gbr='git branch -av'
 alias gci='git commit -m'
 alias glg='git log --graph --all --decorate --date=short --pretty=format:"%h %ad %an%x09%s"'
 alias gp='git push'
-alias gpr='git fetch && git stash && git pull --rebase && git stash pop'
+function gpr {
+  STASH_RESULT=$(git stash save "SyncToUpstream_${DATE}")
+  git pull --rebase $@
+  if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
+    git stash pop
+  fi
+}
 alias gpo='git push origin HEAD:refs/for/master'
 alias gpm='git push origin +master'
 alias gru='git remote update'

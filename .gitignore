@@ -1,3 +1,4 @@
 pyenv/py??
 docker/cassandra/data
+docker/che
 docker/codiad/Codiad*
