@@ -1,0 +1,45 @@
+# There is no tensorflow/keras-gpu for macos.
+
+name: py36
+dependencies:
+  - python=3.6
+
+  # Language tools
+  - pep8
+  - pylint
+
+  # Google infra
+  - glog
+  - protobuf
+  - tensorflow
+
+  # Data science
+  - h5py
+  - keras
+  - matplotlib
+  - numpy
+  - opencv
+  - pandas
+  - scikit-learn = 0.18
+  - scipy
+
+  # Web
+  - flask
+  - gevent
+  - gunicorn
+
+  # Database
+  - pymongo
+
+  # System
+  - termcolor
+
+  - pip:
+    - bpython
+
+    # Google infra
+    - grpcio
+    - grpcio-tools
+
+    # System
+    - setproctitle
