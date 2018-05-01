@@ -1,4 +1,2 @@
-pyenv/py??
-docker/cassandra/data
-docker/che
-docker/codiad/Codiad*
+docker/run_seafile.sh
+docker/seafile_data
