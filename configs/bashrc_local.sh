@@ -6,6 +6,6 @@ DL=${DATA}/download
 BIN=${DATA}/bin
 SEA=${DATA}/Seafile/sea
 
-source "$WS/toolkit/configs/bashrc.sh"
+source "${WS}/toolkit/configs/bashrc.sh"
 
 # Other special/private configs.

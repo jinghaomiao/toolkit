@@ -1,9 +1,9 @@
 # Workspace
-alias w="cd $WS"
+alias w="cd ${WS}"
 
 # Path
-alias d="cd $DT"
-alias dl="cd $DL"
+alias d="cd ${DT}"
+alias dl="cd ${DL}"
 export PATH="${PATH}:${BIN}"
 
 # Static tools.
