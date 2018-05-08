@@ -144,6 +144,14 @@ function grepCode {
   DIR=$2
   findCode "${DIR}" | xargs grep -n --color "${PATTERN}"
 }
+function grepLineNumber {
+  echo "Usage: grepLineNumber <PATTERN> <SRC_FILE>" >&2
+  PATTERN=$1
+  SRC_FILE=$2
+  grep -nr ${PATTERN} ${SRC_FILE} | gawk '{printf $1}' FS=":"
+  printf '/'
+  wc -l ${SRC_FILE} | gawk '{print $1}'
+}
 
 # Apollo
 alias ap="cd $WS/apollo"
