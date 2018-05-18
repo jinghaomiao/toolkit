@@ -9,7 +9,6 @@ dependencies:
   - pylint
 
   # Google infra
-  - glog
   - protobuf
   - python-gflags
   - tensorflow
@@ -39,6 +38,7 @@ dependencies:
     - bpython
 
     # Google infra
+    - glog
     - grpcio
     - grpcio-tools
 

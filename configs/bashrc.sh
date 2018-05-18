@@ -24,12 +24,15 @@ alias cp='rsync -aht --progress'
 alias p='ps aux | grep -i'
 alias du1='du -h -d 1 .'
 
+# Other commands.
+alias tailf='tail -f'
+
 # Python
 alias p2='source activate py27 && which python'
 alias p3='source activate py36 && which python'
-alias py='which python && python'
 alias bp='which bpython && bpython'
-alias wp='which python'
+alias bp2='source activate py27 && bpython'
+alias bp3='source activate py36 && bpython'
 
 # Git
 alias gam='git commit --amend --no-edit'
@@ -156,5 +159,5 @@ function grepLineNumber {
 # Apollo
 alias ap="cd $WS/apollo"
 alias syMaster='gitSync master'
-alias devStart="docker/scripts/dev_start.sh"
-alias devInto="docker/scripts/dev_into.sh"
+alias devStart="$WS/apollo/docker/scripts/dev_start.sh"
+alias devInto="$WS/apollo/docker/scripts/dev_into.sh"
