@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# Known issues:
+# 1. convert-im6.q16: cache resources exhausted ...
+#    Edit /etc/ImageMagick-6/policy.xml, increase resource limit, E.g.:
+#  <policy domain="resource" name="memory" value="2GiB"/>
+#  <policy domain="resource" name="map" value="2GiB"/>
+#  <policy domain="resource" name="area" value="2GiB"/>
+#  <policy domain="resource" name="disk" value="2GiB"/>
 
 DIR=$1
 
