@@ -1,0 +1,43 @@
+name: py37
+dependencies:
+  - python=3.7
+
+  # Language tools
+  - pep8
+  - pylint
+
+  # Google infra
+  - protobuf
+  - tensorflow-gpu
+
+  # Data science
+  - h5py
+  - keras-gpu
+  - matplotlib
+  - numpy
+  - opencv
+  - pandas
+  - scikit-learn = 0.18
+  - scipy
+
+  # Web
+  - flask
+  - gevent
+  - gunicorn
+
+  # Database
+  - pymongo
+
+  # System
+  - termcolor
+
+  - pip:
+    - bpython
+
+    # Google infra
+    - glog
+    - grpcio
+    - grpcio-tools
+
+    # System
+    - setproctitle
