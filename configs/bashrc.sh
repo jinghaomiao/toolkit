@@ -29,10 +29,11 @@ alias tailf='tail -f'
 
 # Python
 alias p2='source activate py27 && which python'
-alias p3='source activate py36 && which python'
+alias p3='source activate py37 && which python'
+alias p36='source activate py36 && which python'
 alias bp='which bpython && bpython'
 alias bp2='source activate py27 && bpython'
-alias bp3='source activate py36 && bpython'
+alias bp3='source activate py37 && bpython'
 
 # Git
 alias gam='git commit --amend --no-edit'

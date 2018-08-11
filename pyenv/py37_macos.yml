@@ -10,11 +10,11 @@ dependencies:
 
   # Google infra
   - protobuf
-  - tensorflow
+  # tensorflow
 
   # Data science
   - h5py
-  - keras
+  # keras
   - matplotlib
   - numpy
   - opencv
