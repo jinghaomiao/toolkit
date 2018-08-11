@@ -4,7 +4,7 @@ DATA=~/data
 WS=${DATA}/workspace
 DL=${DATA}/download
 BIN=${DATA}/bin
-SEA=${DATA}/Seafile/sea
+CLOUD=${DATA}/owncloud
 
 source "${WS}/toolkit/configs/bashrc.sh"
 

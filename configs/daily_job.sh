@@ -22,6 +22,8 @@ EchoTime
 set -x
 ################################# Add your jobs here.
 
+UpdateGitRepos \
+    /home/aaron/data/workspace/apollo \
 
 ################################# End of your jobs.
 set +x
