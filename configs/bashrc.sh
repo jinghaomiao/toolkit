@@ -1,31 +1,18 @@
-# Workspace
-alias w="cd ${WS}"
-
-# Path
-alias d="cd ${DT}"
-alias dl="cd ${DL}"
+# Env
 export PATH="${PATH}:${BIN}"
-
-# Static tools.
-alias ssqt5="nohup ${CLOUD}/software/bin/ssqt5 > /dev/null 2>&1 &"
-
-# History
 export HISTSIZE=100000
 export HISTFILESIZE=200000
+
+# Single char shotcuts.
 alias h='history 1000 | grep -i'
+alias l='ls -CF'
+alias p='ps aux | grep -i'
+alias w="cd ${WS}"
 
 # ls
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 alias cp='rsync -aht --progress'
-
-# ps/du
-alias p='ps aux | grep -i'
-alias du1='du -h -d 1 .'
-
-# Other commands.
-alias tailf='tail -f'
 
 # Python
 alias p2='source activate py27 && which python'
@@ -34,6 +21,11 @@ alias p36='source activate py36 && which python'
 alias bp='which bpython && bpython'
 alias bp2='source activate py27 && bpython'
 alias bp3='source activate py37 && bpython'
+
+# Other aliases
+alias du1='du -h -d 1 .'
+alias tailf='tail -f'
+alias grepn='grep -n'
 
 # Git
 alias gam='git commit --amend --no-edit'
@@ -58,6 +50,7 @@ alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias gitSync='SyncToUpstream upstream master'
 alias gitSaveStashPatch='git stash save MyGitStashPatch'
 alias gitApplyStashPatch='ApplyStash MyGitStashPatch'
+alias syMaster='gitSync master'
 
 function SyncToUpstream {
   # E.g.: upstream
@@ -89,6 +82,9 @@ function ApplyStash {
 
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+
+# Static tools
+alias ssqt5="nohup ${CLOUD}/software/bin/ssqt5 > /dev/null 2>&1 &"
 
 # Bazel
 alias bb='bazel build'
@@ -159,6 +155,5 @@ function grepLineNumber {
 
 # Apollo
 alias ap="cd $WS/apollo"
-alias syMaster='gitSync master'
 alias devStart="$WS/apollo/docker/scripts/dev_start.sh"
 alias devInto="$WS/apollo/docker/scripts/dev_into.sh"
