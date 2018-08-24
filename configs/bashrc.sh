@@ -26,6 +26,9 @@ alias bp3='source activate py37 && bpython'
 alias du1='du -h -d 1 .'
 alias tailf='tail -f'
 alias grepn='grep -n'
+function df {
+  /bin/df $@ | grep -v "^/dev/loop"
+}
 
 # Git
 alias gam='git commit --amend --no-edit'

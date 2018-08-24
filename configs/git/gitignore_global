@@ -1,5 +1,7 @@
 .DS_Store
 
+ENV.sh
+
 # Log files.
 *.log
 nohup.out
