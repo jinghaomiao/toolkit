@@ -1,0 +1,6 @@
+name: py27
+dependencies:
+  - python=2.7
+
+  - pip:
+    - bpython

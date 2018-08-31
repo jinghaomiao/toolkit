@@ -7,7 +7,7 @@ export HISTFILESIZE=200000
 alias h='history 1000 | grep -i'
 alias l='ls -CF'
 alias p='ps aux | grep -i'
-alias w="cd ${WS}"
+alias w="cd ${WORK}"
 
 # ls
 alias ll='ls -alF'
@@ -157,6 +157,6 @@ function grepLineNumber {
 }
 
 # Apollo
-alias ap="cd $WS/apollo"
-alias devStart="$WS/apollo/docker/scripts/dev_start.sh"
-alias devInto="$WS/apollo/docker/scripts/dev_into.sh"
+alias ap="cd ${WORK}/apollo"
+alias devStart="${WORK}/apollo/docker/scripts/dev_start.sh"
+alias devInto="${WORK}/apollo/docker/scripts/dev_into.sh"

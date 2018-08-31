@@ -21,7 +21,7 @@
 	username = Aaron Xiao
 [core]
 	editor = vim
-	excludesfile = /home/data/workspace/toolkit/configs/git/gitignore_global
+	excludesfile = /home/aaron/work/toolkit/configs/git/gitignore_global
 [pull]
 	rebase = true
 [push]

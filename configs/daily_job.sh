@@ -20,7 +20,7 @@ function EchoTime() {
 
 function Main() {
   ################################# Add your jobs here.
-  UpdateGitRepos /home/aaron/data/workspace/apollo
+  UpdateGitRepos /home/aaron/work/apollo
 }
 
 if [ "$1" = "run" ]; then
