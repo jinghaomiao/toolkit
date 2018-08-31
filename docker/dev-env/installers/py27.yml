@@ -2,5 +2,42 @@ name: py27
 dependencies:
   - python=2.7
 
+  # Language tools
+  - pep8
+  - pylint
+
+  # Google infra
+  - protobuf
+  - python-gflags
+  - tensorflow
+
+  # Data science
+  - h5py
+  - keras
+  - numpy
+  - opencv
+  - pandas
+  - scikit-learn = 0.18
+  - scipy
+
+  # Web
+  - flask
+  - gevent
+  - gunicorn
+
+  # Database
+  - pymongo
+
+  # System
+  - termcolor
+
   - pip:
     - bpython
+
+    # Google infra
+    - glog
+    - grpcio
+    - grpcio-tools
+
+    # System
+    - setproctitle
