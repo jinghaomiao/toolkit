@@ -14,5 +14,4 @@ docker build \
     --network=host \
     .
 
-export IMAGE=${IMAGE}
 echo "To push: docker push ${IMAGE}"
