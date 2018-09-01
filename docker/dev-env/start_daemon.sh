@@ -12,6 +12,7 @@ docker run -it -d \
     --net=host --privileged \
     --name=${TAG} \
     --hostname ${TAG} \
+    --add-host ${TAG}:127.0.0.1 \
     -v ~/work:/home/${USER}/work \
     -v ~/.ssh:/home/${USER}/.ssh \
     ${IMAGE}

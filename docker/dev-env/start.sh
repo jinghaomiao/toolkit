@@ -12,6 +12,7 @@ docker run -it --rm \
     --net=host --privileged \
     --name=${TAG} \
     --hostname ${TAG} \
+    --add-host ${TAG}:127.0.0.1 \
     -v $(realpath ~/work):/home/${USER}/work \
     ${IMAGE}
 set +x

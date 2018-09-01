@@ -8,21 +8,26 @@ if [ "$(whoami)" != "${USER}" ]; then
   exit 1
 fi
 
-function CloneMissing() {
-  REPO="$1"
-  TARGET_DIR="$2"
-  if [ ! -d "${TARGET_DIR}" ]; then
-    git clone --depth=1 "${REPO}" "${TARGET_DIR}"
-  fi
-}
-
 WORK=${HOME}/work
-CloneMissing "git@github.com:xiaoxq/apollo.git" "${WORK}/apollo"
-CloneMissing "git@github.com:xiaoxq/toolkit.git" "${WORK}/toolkit"
-CloneMissing "https://github.com/magicmonty/bash-git-prompt.git" "${HOME}/.bash-git-prompt"
 
-cp -f "${WORK}/toolkit/configs/git/DOT_gitconfig_IN_HOME" "${HOME}/.gitconfig"
-echo "source ${WORK}/toolkit/configs/bashrc_local.sh" >> "${HOME}/.bashrc"
+TARGET_DIR="${WORK}/toolkit"
+if [ ! -d "${TARGET_DIR}" ]; then
+  git clone --depth=1 git@github.com:xiaoxq/toolkit.git "${TARGET_DIR}"
+  cp -f "${TARGET_DIR}/configs/git/DOT_gitconfig_IN_HOME" "${HOME}/.gitconfig"
+  echo "source ${TARGET_DIR}/configs/bashrc_local.sh" >> "${HOME}/.bashrc"
+fi
+
+TARGET_DIR="${HOME}/.bash-git-prompt"
+if [ ! -d "${TARGET_DIR}" ]; then
+  git clone --depth=1 https://github.com/magicmonty/bash-git-prompt.git "${TARGET_DIR}"
+fi
+
+TARGET_DIR="${WORK}/apollo"
+if [ ! -d "${TARGET_DIR}" ]; then
+  git clone --depth=1 "git@github.com:xiaoxq/apollo.git" "${TARGET_DIR}"
+  cd "${TARGET_DIR}"
+  git remote add upstream https://github.com/ApolloAuto/apollo.git
+fi
 
 cd "${WORK}"
 bash
