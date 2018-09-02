@@ -12,8 +12,8 @@ docker run -it -d \
     --name=${TAG} \
     --hostname ${TAG} \
     --add-host ${TAG}:127.0.0.1 \
-    -v $(realpath ~/work):/home/${USER}/work \
-    -v ~/.ssh:/home/${USER}/.ssh \
+    -v "$(cd ~/work; pwd)":/home/${USER}/work \
+    -v "$(cd ~/.ssh; pwd)":/home/${USER}/.ssh \
     ${IMAGE}
 set +x
 
