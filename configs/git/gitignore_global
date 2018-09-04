@@ -1,4 +1,5 @@
 .DS_Store
+.bash-git-rc
 
 ENV.sh
 
