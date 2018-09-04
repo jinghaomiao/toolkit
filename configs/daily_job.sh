@@ -3,12 +3,18 @@
 ################################## Usage.
 echo "Add this to 'crontab -e':"
 #     m h
-echo "* 3 * * * $(realpath $0) run > /tmp/daily_job.log 2>&1"
+echo "0 3 * * * $(realpath $0) run > /tmp/daily_job.log 2>&1"
 
 ################################## Utils.
 function UpdateGitRepos() {
   for arg in "$@"; do
     cd "${arg}" && git remote update
+  done
+}
+
+function PullGitRepos() {
+  for arg in "$@"; do
+    cd "${arg}" && git pull --rebase
   done
 }
 
@@ -20,7 +26,8 @@ function EchoTime() {
 
 function Main() {
   ################################# Add your jobs here.
-  UpdateGitRepos /home/aaron/work/apollo
+  UpdateGitRepos /home/aaron/work/apollo \
+                 /home/aaron/work/toolkit
 }
 
 if [ "$1" = "run" ]; then
