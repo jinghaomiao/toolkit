@@ -9,6 +9,7 @@ apt-get install -y \
     bzip2 \
     g++ \
     git \
+    rsync \
     sudo \
     tree \
     unrar \
