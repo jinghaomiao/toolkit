@@ -29,11 +29,15 @@ alias grepn='grep -n'
 function df {
   /bin/df $@ | grep -v "^/dev/loop"
 }
+alias sum='paste -sd+ | bc'
 
 # Git
 alias gam='git commit --amend --no-edit'
 alias gbr='git branch -av'
 alias gci='git commit -m'
+alias gd='git diff HEAD'
+alias gitSync='SyncToUpstream upstream master'
+alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias glg='git log --graph --all --decorate --date=short --pretty=format:"%h %ad %an%x09%s"'
 alias gp='git push'
 function gpr {
@@ -49,10 +53,6 @@ alias gru='git remote update'
 alias gsl='git stash list'
 alias gss='git stash save'
 alias gst='git status --short'
-alias gitg='nohup gitg > /dev/null 2>&1 &'
-alias gitSync='SyncToUpstream upstream master'
-alias gitSaveStashPatch='git stash save MyGitStashPatch'
-alias gitApplyStashPatch='ApplyStash MyGitStashPatch'
 alias syMaster='gitSync master'
 
 function SyncToUpstream {
@@ -70,16 +70,6 @@ function SyncToUpstream {
   git reset --hard ${UPSTREAM}/${UPSTREAM_BRANCH} -- || exit 1
   if [ "${STASH_RESULT}" != 'No local changes to save' ]; then
     git stash pop
-  fi
-}
-
-function ApplyStash {
-  STASH_KEYWORD=$1
-  STASH_NAME=$(git stash list | grep "${STASH_KEYWORD}" | awk -F: '{print $1}')
-  if ! [ -z ${STASH_NAME} ]; then
-    git stash apply ${STASH_NAME}
-  else
-    echo "No such stash patch named ${STASH_KEYWORD}"
   fi
 }
 
