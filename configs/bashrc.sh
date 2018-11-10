@@ -22,6 +22,9 @@ alias bp='which bpython && bpython'
 alias bp2='source activate py27 && bpython'
 alias bp3='source activate py37 && bpython'
 
+# Docker
+alias dm='docker images --format "{{.ID}}\t{{.CreatedAt}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}"'
+
 # Other aliases
 alias du1='du -h -d 1 .'
 alias tailf='tail -f'
@@ -33,6 +36,7 @@ alias sum='paste -sd+ | bc'
 
 # Git
 alias gam='git commit --amend --no-edit'
+alias gap='git commit --amend --no-edit && git push origin +master'
 alias gbr='git branch -av'
 alias gci='git commit -m'
 alias gd='git diff HEAD'
