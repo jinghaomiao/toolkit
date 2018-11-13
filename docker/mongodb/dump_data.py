@@ -10,7 +10,9 @@ import pymongo
 
 gflags.DEFINE_string('mongo_host', '127.0.0.1', 'MongoDB host ip.')
 gflags.DEFINE_integer('mongo_port', 27017, 'MongoDB port.')
-gflags.DEFINE_string('output_dir', './databases', 'Path to output.')
+gflags.DEFINE_string('output_dir', './databases',
+                     'Path to output dir. The result will be '
+                     '<output_dir>/<db>/<collection>/<index>.doc')
 
 # Global configs
 AUTH = {
