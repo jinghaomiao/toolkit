@@ -5,6 +5,7 @@ export HISTFILESIZE=200000
 
 # Single char shotcuts.
 alias h='history 1000 | grep -i'
+alias k='kubectl'
 alias l='ls -CF'
 alias p='ps aux | grep -i'
 alias w="cd ${WORK}"
@@ -23,12 +24,11 @@ alias bp2='source activate py27 && bpython'
 alias bp3='source activate py37 && bpython'
 
 # Docker
-alias dm='docker images --format "{{.ID}}\t{{.CreatedAt}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}"'
+alias di='docker images --format "{{.ID}}\t{{.CreatedAt}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}"'
 
 # Other aliases
 alias du1='du -h -d 1 .'
 alias tailf='tail -f'
-alias grepn='grep -n'
 function df {
   /bin/df $@ | grep -v "^/dev/loop"
 }
@@ -39,7 +39,6 @@ alias gam='git commit --amend --no-edit'
 alias gap='git commit --amend --no-edit && git push origin +master'
 alias gbr='git branch -av'
 alias gci='git commit -m'
-alias gd='git diff HEAD'
 alias gitSync='SyncToUpstream upstream master'
 alias gitg='nohup gitg > /dev/null 2>&1 &'
 alias glg='git log --graph --all --decorate --date=short --pretty=format:"%h %ad %an%x09%s"'
@@ -80,14 +79,7 @@ function SyncToUpstream {
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 
-# Static tools
-alias ssqt5="nohup ${CLOUD}/software/bin/ssqt5 > /dev/null 2>&1 &"
-
 # Bazel
-alias bb='bazel build'
-alias bbd='bazel build -c dbg'
-alias bbo='bazel build -c opt'
-alias br='bazel run'
 function bazelDepsGraph {
   echo "Usage: bazelDeps <TARGET> [FILTER_PATH]"
   TARGET=$1
@@ -102,8 +94,6 @@ function bazelDepsGraph {
 
 # Ubuntu
 alias uu='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoremove -y --purge'
-alias aptInstall='sudo apt-get install'
-alias aptRemove='sudo apt-get autoremove'
 alias aptSearch='apt-cache search'
 
 # Find & Grep
