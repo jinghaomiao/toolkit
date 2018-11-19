@@ -1,19 +1,12 @@
-.DS_Store
-.bash-git-rc
+# General patterns
+.*
+aaron*
 
 ENV.sh
 
 # Log files.
 *.log
 nohup.out
-
-# IDE files.
-.cproject
-.idea
-.project
-.pydevproject
-.settings
-.vscode
 
 # Building files.
 *.o
@@ -23,11 +16,3 @@ bazel-out
 bazel-genfiles
 cmake-build-debug
 node_modules
-
-# gtags files
-GPATH
-GRTAGS
-GSYMS
-GTAGS
-
-aaron*
