@@ -77,7 +77,9 @@ function SyncToUpstream {
 }
 
 GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+  source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 # Bazel
 function bazelDepsGraph {
