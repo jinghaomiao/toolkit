@@ -1,7 +1,7 @@
 # Local configs.
 WORK=~/work
 CLOUD=~/cloud
-BIN=${CLOUD}/bin
+BIN=${CLOUD}/software/bin
 
 source "${WORK}/toolkit/configs/bashrc.sh"
 
