@@ -9,6 +9,7 @@ alias k='kubectl'
 alias l='ls -CF'
 alias p='ps aux | grep -i'
 alias w="cd ${WORK}"
+alias c="cd ${CLOUD}"
 
 # ls
 alias ll='ls -alF'
