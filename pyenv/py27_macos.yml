@@ -20,7 +20,8 @@ dependencies:
   - numpy
   - opencv
   - pandas
-  - scikit-learn = 0.18
+  - redis
+  - scikit-learn
   - scipy
 
   # Web

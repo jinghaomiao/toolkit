@@ -1,5 +1,5 @@
 # Env
-export PATH="${PATH}:${BIN}"
+export PATH="${PATH}:${CLOUD}/software/bin"
 export HISTSIZE=100000
 export HISTFILESIZE=200000
 

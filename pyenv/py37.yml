@@ -17,6 +17,7 @@ dependencies:
   - numpy
   - opencv
   - pandas
+  - redis
   - scikit-learn
   - scipy
 
