@@ -2,22 +2,22 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-KNOWN_PEER=$1
-IMAGE=xiangquan/glusterfs-change-port:5.1
+# Please provide.
+KNOWN_PEER=""
 BRICKS=(
-  # Add your bricks here.
   /home/data/glusterfs
 )
 
+IMAGE=xiangquan/glusterfs-change-port:5.1
+CONTAINER=glusterfs-server
 
 # Get volume conf from bricks.
 VOLUMES=""
 for brick in ${BRICKS[@]}; do
-  mkdir -p ${brick}
-  VOLUMES="${VOLUMES} -v ${brick}:${brick}"
+  sudo mkdir -m 777 -p ${brick}
+  MOUNT_POINT=$(dirname "${brick}")
+  VOLUMES="${VOLUMES} -v ${MOUNT_POINT}:${MOUNT_POINT}"
 done
-
-CONTAINER=glusterfs
 
 set -x
 docker run -it -d \
@@ -26,6 +26,9 @@ docker run -it -d \
     --privileged \
     ${VOLUMES} \
     ${IMAGE} /bin/bash
+set +x
+
+docker exec ${CONTAINER} bash -c "service glusterd start"
 
 if [ ! -z "${KNOWN_PEER}" ]; then
   docker exec ${CONTAINER} bash -c "gluster peer probe ${KNOWN_PEER}"

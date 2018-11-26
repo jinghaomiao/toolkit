@@ -3,7 +3,11 @@ MAINTAINER Aaron Xiao <xiaoxiangquan@gmail.com>
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV VERSION=5.1
-ENV NEW_PORT=8007
+ENV BASE_PORT=8007
+ENV PRIV_PORT=8152
+
+# Mount point for client.
+VOLUME /mnt/nfs
 
 # Install libraries.
 RUN apt-get update -y && apt-get install -y make automake autoconf libtool \
@@ -15,13 +19,14 @@ RUN apt-get update -y && apt-get install -y make automake autoconf libtool \
 RUN wget https://github.com/gluster/glusterfs/archive/v${VERSION}.zip && \
     unzip v${VERSION}.zip && \
     cd glusterfs-${VERSION} && \
-    sed -i "s/GF_DEFAULT_BASE_PORT 24007/GF_DEFAULT_BASE_PORT ${NEW_PORT}/g" \
+    sed -i "s/GF_IANA_PRIV_PORTS_START 49152/GF_IANA_PRIV_PORTS_START ${PRIV_PORT}/g" \
+        libglusterfs/src/common-utils.h && \
+    sed -i "s/GF_DEFAULT_BASE_PORT 24007/GF_DEFAULT_BASE_PORT ${BASE_PORT}/g" \
         libglusterfs/src/globals.h && \
     ./autogen.sh && \
     ./configure && \
-    make && \
+    make -j8 && \
     make install && \
     cd .. && \
     rm -fr glusterfs-${VERSION} v${VERSION}.zip && \
-    ldconfig && \
-    service glusterd start
+    ldconfig
