@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV VERSION=5.1
 ENV BASE_PORT=8007
 ENV PRIV_PORT=8152
+ENV MOUNTV3_PORT=8465
 
 # Mount point for client.
 VOLUME /mnt/nfs
@@ -23,6 +24,8 @@ RUN wget https://github.com/gluster/glusterfs/archive/v${VERSION}.zip && \
         libglusterfs/src/common-utils.h && \
     sed -i "s/GF_DEFAULT_BASE_PORT 24007/GF_DEFAULT_BASE_PORT ${BASE_PORT}/g" \
         libglusterfs/src/globals.h && \
+    sed -i "s/GF_MOUNTV3_PORT 38465/GF_MOUNTV3_PORT ${MOUNTV3_PORT}/g" \
+        xlators/nfs/server/src/mount3.h && \
     ./autogen.sh && \
     ./configure && \
     make -j8 && \
