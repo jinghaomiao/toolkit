@@ -1,0 +1,17 @@
+use admin;
+db.auth(<admin_user>, <admin_password>);
+
+use <data_db>;
+db.createUser({
+  user: '<ro_user>',
+  pwd: '<ro_password>',
+  roles: ['read'],
+  mechanisms:["SCRAM-SHA-1"],
+});
+
+db.createUser({
+  user: '<rw_user>',
+  pwd: '<rw_password>',
+  roles: ['readWrite'],
+  mechanisms:["SCRAM-SHA-1"],
+});
